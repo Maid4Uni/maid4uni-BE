@@ -43,6 +43,12 @@ public class FeedbackController {
         );
     }
 
+    /**
+     * Get feedback by receiver id response entity.
+     *
+     * @param accountDto the account dto
+     * @return the response entity
+     */
     @GetMapping(API_PARAMS.GET_FEEDBACK_BY_RECEIVER_ID)
     public ResponseEntity<ResponseObject> getFeedbackByReceiverId(
             @RequestBody AccountDto accountDto){
@@ -53,6 +59,12 @@ public class FeedbackController {
         );
     }
 
+    /**
+     * Get feedback by sender id response entity.
+     *
+     * @param accountDto the account dto
+     * @return the response entity
+     */
     @GetMapping(API_PARAMS.GET_FEEDBACK_BY_SENDER_ID)
     public ResponseEntity<ResponseObject> getFeedbackBySenderId(
             @RequestBody AccountDto accountDto){

@@ -31,7 +31,7 @@ public class Package {
     @Column(name = "created_at", nullable = false)
     Date createdAt;
     @Column(name = "updated_at")
-    Date updateAt;
+    Date updatedAt;
 
     @ManyToOne
     @JoinColumn(name = "creator_id")

@@ -1,26 +1,29 @@
 package com.swp391.maid4uni.request;
 
 import com.swp391.maid4uni.entity.Role;
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.util.Date;
 
 /**
- * The type Register account request.
+ * The type Update account request.
  */
-@Getter
-@Setter
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class RegisterAccountRequest {
+public class UpdateAccountRequest {
     int id;
     String username;
     String password;
-    String fullName;
-    String phoneNumber;
     String email;
+    String phoneNumber;
+    String fullName;
+    Date dOB;
+    String gender;
+    String address;
+    String img;
+    Role role;
 }

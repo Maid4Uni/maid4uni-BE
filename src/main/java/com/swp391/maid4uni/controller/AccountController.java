@@ -3,6 +3,7 @@ package com.swp391.maid4uni.controller;
 import com.swp391.maid4uni.enums.API_PARAMS;
 import com.swp391.maid4uni.request.LoginByUsernameRequest;
 import com.swp391.maid4uni.request.RegisterAccountRequest;
+import com.swp391.maid4uni.request.UpdateAccountRequest;
 import com.swp391.maid4uni.response.AccountResponse;
 import com.swp391.maid4uni.response.ResponseObject;
 import com.swp391.maid4uni.service.AccountService;
@@ -111,6 +112,19 @@ public class AccountController {
         );
     }
 
-
+    /**
+     * Update response entity.
+     *
+     * @param updateAccountRequest the update account request
+     * @return the response entity
+     */
+    @PutMapping(API_PARAMS.UPDATE_ACCOUNT_INFO)
+    public ResponseEntity<ResponseObject> update(@RequestBody UpdateAccountRequest updateAccountRequest) {
+        log.info("Start update");
+        Integer accountId = updateAccountRequest.getId();
+        return ResponseEntity.ok().body(
+                new ResponseObject("OK", "UPDATE SUCCESSFULLY", accountService.update(accountId, updateAccountRequest))
+        );
+    }
 
 }

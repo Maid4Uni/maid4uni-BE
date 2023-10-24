@@ -3,6 +3,7 @@ package com.swp391.maid4uni.service;
 
 import com.swp391.maid4uni.request.LoginByUsernameRequest;
 import com.swp391.maid4uni.request.RegisterAccountRequest;
+import com.swp391.maid4uni.request.UpdateAccountRequest;
 import com.swp391.maid4uni.response.AccountResponse;
 import com.swp391.maid4uni.response.LoginByUsernameResponse;
 
@@ -57,5 +58,13 @@ public interface AccountService {
      * @return the account response
      */
     AccountResponse register(RegisterAccountRequest registerAccountRequest);
+
+    /**
+     * Update account response.
+     *
+     * @param updateAccountRequest the update account request
+     * @return the account response
+     */
+    AccountResponse update(Integer accountId, UpdateAccountRequest updateAccountRequest);
 
 }

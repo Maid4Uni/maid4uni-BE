@@ -44,4 +44,57 @@ public interface AccountRepository extends JpaRepository<Account, Integer> {
      * @return the list
      */
     List<Account> findByRole(Role role);
+
+    /**
+     * Find by username and logical delete status optional.
+     *
+     * @param username            the username
+     * @param logicalDeleteStatus the logical delete status
+     * @return the optional
+     */
+    Optional<Account> findByUsernameAndLogicalDeleteStatus(String username, short logicalDeleteStatus);
+
+    /**
+     * Find all by logical delete status list.
+     *
+     * @param logicalDeleteStatus the logical delete status
+     * @return the list
+     */
+    List<Account> findAllByLogicalDeleteStatus(short logicalDeleteStatus);
+
+    /**
+     * Find by role and logical delete status list.
+     *
+     * @param role                the role
+     * @param logicalDeleteStatus the logical delete status
+     * @return the list
+     */
+    List<Account> findByRoleAndLogicalDeleteStatus(Role role, short logicalDeleteStatus);
+
+    /**
+     * Exists by username and logical delete status boolean.
+     *
+     * @param username            the username
+     * @param logicalDeleteStatus the logical delete status
+     * @return the boolean
+     */
+    boolean existsByUsernameAndLogicalDeleteStatus(String username, short logicalDeleteStatus);
+
+    /**
+     * Exists by email and logical delete status boolean.
+     *
+     * @param email               the email
+     * @param logicalDeleteStatus the logical delete status
+     * @return the boolean
+     */
+    boolean existsByEmailAndLogicalDeleteStatus(String email, short logicalDeleteStatus);
+
+    /**
+     * Exists by phone number and logical delete status boolean.
+     *
+     * @param phoneNumber         the phone number
+     * @param logicalDeleteStatus the logical delete status
+     * @return the boolean
+     */
+    boolean existsByPhoneNumberAndLogicalDeleteStatus(String phoneNumber, short logicalDeleteStatus);
 }
